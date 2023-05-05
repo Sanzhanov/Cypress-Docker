@@ -1,15 +1,13 @@
 {
   "name": "cypress-docker",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Cypress tests execution in Docker containers",
   "scripts": {
     "open": "npx cypress open",
     "run": "npx cypress run"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Alex Sanzhanov",
+  "license": "MIT",
   "devDependencies": {
     "cypress": "^12.11.0",
     "typescript": "^5.0.4"
