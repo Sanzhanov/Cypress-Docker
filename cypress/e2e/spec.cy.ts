@@ -18,7 +18,7 @@ describe('template spec', () => {
       .and('contains.text', 'Test smarter, not harder with Cypress.')
   })
 
-  it('Verify button set', () => {
+  it('Verify buttons set', () => {
     cy
       .get('.buttonSet li')
       .should('be.visible')
