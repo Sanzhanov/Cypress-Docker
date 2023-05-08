@@ -1,7 +1,7 @@
 describe('template spec', () => {
 
   beforeEach(() => {
-    cy.visit('/testing-with-cypress')
+    cy.visit('http://medium.com/testing-with-cypress')
   });
 
   it('Verify header', () => {
