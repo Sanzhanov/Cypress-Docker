@@ -1,4 +1,4 @@
-describe('Testing the main page of the blog Testing with Cypress', () => {
+describe('Testing the homepage of the blog Testing with Cypress', () => {
 
   beforeEach(() => {
     cy.visit('http://medium.com/testing-with-cypress')
