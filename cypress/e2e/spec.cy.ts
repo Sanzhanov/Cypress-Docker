@@ -1,7 +1,8 @@
 describe('Testing the homepage of the blog Testing with Cypress', () => {
 
   beforeEach(() => {
-    cy.visit('http://medium.com/testing-with-cypress')
+    cy
+      .visit('http://medium.com/testing-with-cypress')
   });
 
   it('Verify header', () => {
