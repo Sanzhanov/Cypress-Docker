@@ -6,6 +6,6 @@ jobs:
    steps:
     - name: Checkout GitCode
       uses: actions/checkout@v2
-      
+
     - name: Run docker-compose
-      run: docker-compose up -d
+      run: docker-compose up
