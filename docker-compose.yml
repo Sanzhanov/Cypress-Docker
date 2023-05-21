@@ -4,17 +4,11 @@ services:
  e2e-chrome:
    build: ./
    command: "--browser chrome"
-   volumes:
-     - ./:/tests
 
  e2e-firefox:
    build: ./
    command: "--browser firefox --config video=false"
-   volumes:
-     - ./:/tests
 
  e2e-edge:
    build: ./
    command: "--browser edge"
-   volumes:
-     - ./:/tests
