@@ -7,3 +7,16 @@ services:
    working_dir: /tests
    volumes:
      - ./:/tests
+
+ firefox:
+   image: cypress/included:12.12.0
+   command: "--browser firefox"
+   working_dir: /tests
+   volumes:
+     - ./:/tests
+
+ electron:
+   image: cypress/included:12.12.0
+   working_dir: /tests
+   volumes:
+     - ./:/tests
