@@ -3,21 +3,18 @@ services:
 
  e2e-chrome:
    build: ./
-   working_dir: /tests
    command: "--browser chrome"
    volumes:
      - ./:/tests
 
  e2e-firefox:
    build: ./
-   working_dir: /tests
    command: "--browser firefox --config video=false"
    volumes:
      - ./:/tests
 
  e2e-edge:
    build: ./
-   working_dir: /tests
    command: "--browser edge"
    volumes:
      - ./:/tests
