@@ -6,6 +6,7 @@ jobs:
    steps:
     - name: Checkout GitCode
       uses: actions/checkout@v2
+      run: npm install
 
     - name: Run docker-compose
       run: docker-compose up
