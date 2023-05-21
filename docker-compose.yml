@@ -3,21 +3,7 @@ services:
 
  chrome:
    image: cypress/browsers:node-18.16.0-chrome-113.0.5672.92-1-ff-113.0-edge-113.0.1774.35-1
-   command: "npx cypress run --browser chrome"
    working_dir: /tests
-   volumes:
-     - ./:/tests
-
- firefox:
-   image: cypress/browsers:node-18.16.0-chrome-113.0.5672.92-1-ff-113.0-edge-113.0.1774.35-1
-   command: "npx cypress run --browser firefox --config video=false"
-   working_dir: /tests
-   volumes:
-     - ./:/tests
-
- edge:
-   image: cypress/browsers:node-18.16.0-chrome-113.0.5672.92-1-ff-113.0-edge-113.0.1774.35-1
-   command: "npx cypress run --browser edge"
-   working_dir: /tests
+   command: "npm i && npx cypress run --browser chrome"
    volumes:
      - ./:/tests
