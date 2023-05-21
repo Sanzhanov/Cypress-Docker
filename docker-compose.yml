@@ -10,7 +10,7 @@ services:
 
  firefox:
    image: cypress/included:12.12.0
-   command: "--browser firefox"
+   command: "--browser firefox --config video=false"
    working_dir: /tests
    volumes:
      - ./:/tests
