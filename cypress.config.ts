@@ -13,8 +13,8 @@ export default defineConfig({
   defaultCommandTimeout: 5000,
   viewportWidth: 1280,
   viewportHeight: 720,
-  screenshotOnRunFailure: true,
-  videoUploadOnPasses: true,
-  video: true,
-  videoCompression: false
+  // screenshotOnRunFailure: true,
+  // videoUploadOnPasses: true,
+  // video: true,
+  // videoCompression: false
 })
