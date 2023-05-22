@@ -14,6 +14,10 @@ on:
 jobs:
  cypress-run:
    runs-on: ubuntu-latest
+   defaults:
+    run:
+      working-directory: ./Cypress-Docker
+
    steps:
     - name: Checkout code 🛎
       uses: actions/checkout@v3
@@ -26,4 +30,4 @@ jobs:
       if: always()
       with:
         name: cypress-screenshots
-        path: /cypress/screenshots
+        path: Cypress-Docker/cypress/screenshots
