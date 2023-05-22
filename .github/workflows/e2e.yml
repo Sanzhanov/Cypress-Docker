@@ -23,7 +23,7 @@ jobs:
 
     - name: Save artifacts - screenshots 📷
       uses: actions/upload-artifact@v3
-      if: failure()
+      if: always()
       with:
         name: cypress-screenshots
-        path: ./tests/cypress/screenshots
+        path: /tests/cypress/screenshots
