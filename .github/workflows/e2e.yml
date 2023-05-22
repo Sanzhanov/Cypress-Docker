@@ -23,8 +23,8 @@ jobs:
       run: docker-compose up
 
     - name: Save artifacts - screenshots 📷
-      uses: actions/upload-artifact@v3
+      uses: actions/download-artifact@v3
       if: always()
       with:
         name: cypress-screenshots
-        path: Cypress-Docker/cypress/screenshots
+        path: /cypress/screenshots
