@@ -16,7 +16,7 @@ jobs:
    runs-on: ubuntu-latest
    defaults:
     run:
-      working-directory: ./
+      working-directory: ./tests
    steps:
     - name: Checkout code 🛎
       uses: actions/checkout@v3
@@ -29,11 +29,11 @@ jobs:
       if: failure()
       with:
         name: cypress-screenshots
-        path: /tests/cypress/screenshots
+        path: /cypress/screenshots
 
     - name: Save artifacts - videos 📹
       uses: actions/upload-artifact@v3
       if: always()
       with:
         name: cypress-videos
-        path: /tests/cypress/videos
+        path: /cypress/videos
