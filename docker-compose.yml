@@ -4,3 +4,5 @@ services:
  e2e-chrome:
    build: ./
    command: "--browser chrome"
+   volumes:
+    - ./:/
