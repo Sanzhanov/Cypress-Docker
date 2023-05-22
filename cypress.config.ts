@@ -6,10 +6,6 @@ export default defineConfig({
       //
     },
   },
-  retries: {
-    runMode: 1,
-    openMode: 1,
-  },
   defaultCommandTimeout: 5000,
   viewportWidth: 1280,
   viewportHeight: 720,
