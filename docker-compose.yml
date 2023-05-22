@@ -7,7 +7,7 @@ services:
 
  e2e-firefox:
    build: ./
-   command: "--browser firefox"
+   command: "--browser firefox --config video=false"
 
  e2e-edge:
    build: ./
