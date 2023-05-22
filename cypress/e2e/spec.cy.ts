@@ -9,7 +9,7 @@ describe('Testing the homepage of the blog Testing with Cypress', () => {
     cy
       .get('h1')
       .should('be.visible')
-      .and('contains.text', 'Testing with Cypress')
+      .and('contains.text', 'Testing with Cypress.')
   })
 
   it('slogan should contain specific text', () => {
