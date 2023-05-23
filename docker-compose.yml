@@ -4,3 +4,4 @@ services:
   e2e-chrome:
    build: 
     context: .
+    dockerfile: ./Dockerfile - Chrome
