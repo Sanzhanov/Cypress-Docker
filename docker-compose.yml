@@ -4,6 +4,5 @@ services:
  e2e-chrome:
    build: ./
    command: "--browser chrome"
-   working_dir: /tests
    volumes:
     - ./:/tests
