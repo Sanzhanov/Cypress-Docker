@@ -2,21 +2,21 @@ version: '3.2'
 services: 
 
   e2e-chrome:
-   build: ./
+   build: .
    command: "--browser chrome"
    working_dir: /tests
    volumes:
     - ./:/tests
     
   e2e-firefox:
-   build: ./
+   build: .
    command: "--browser firefox --config video=false"
    working_dir: /tests
    volumes:
     - ./:/tests
 
   e2e-edge:
-   build: ./
+   build: .
    command: "--browser edge"
    working_dir: /tests
    volumes:
