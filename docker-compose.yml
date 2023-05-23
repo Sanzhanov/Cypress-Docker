@@ -2,6 +2,19 @@ version: '3.2'
 services: 
 
   e2e-chrome:
-   build: 
-    context: .
-    dockerfile: ./Dockerfile - Chrome
+   build: .
+   command: "-b chrome"
+   volumes:
+    - ./:/tests
+    
+  e2e-firefox:
+   build: .
+   command: "-b firefox -c video=false"
+   volumes:
+    - ./:/tests
+
+  e2e-edge:
+   build: .
+   command: "-b edge"
+   volumes:
+    - ./:/tests
