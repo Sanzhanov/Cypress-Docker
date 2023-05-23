@@ -2,5 +2,4 @@ version: '3.2'
 services: 
 
   e2e-chrome:
-   build:
-    context: ../
+   build: .
