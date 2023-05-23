@@ -10,6 +10,6 @@ ENTRYPOINT npx cypress run -b chrome
 
 WORKDIR /artifacts
 
-RUN cp ../cypress/screenshots:./
+RUN cp ../cypress/screenshots ./
 
-VOLUME ../:../
+RUN ls
