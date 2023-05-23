@@ -22,14 +22,20 @@ jobs:
     - name: Run docker-compose 🐳
       run: docker-compose up
 
-    - name: Save artifacts - screenshots 📷
-      uses: actions/upload-artifact@v3
+    - name: Archive and upload Chrome artifacts
+      uses: actions/upload-artifact@v2
       with:
-        name: cypress-screenshots
-        path: ./cypress/screenshots
+        name: chrome-artifacts
+        path: ./artifacts/chrome
 
-    - name: Save artifacts - videos
-      uses: actions/upload-artifact@v3
+    - name: Archive and upload Firefox artifacts
+      uses: actions/upload-artifact@v2
       with:
-        name: cypress-videos
-        path: ./cypress/videos
+        name: firefox-artifacts
+        path: ./artifacts/firefox
+
+    - name: Archive and upload Edge artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: edge-artifacts
+        path: ./artifacts/edge

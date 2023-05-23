@@ -7,6 +7,7 @@ services:
    working_dir: /e2e-chrome
    volumes:
     - ./:/e2e-chrome
+    - ./artifacts/chrome:/e2e-chrome/cypress/videos
     
   e2e-firefox:
    build: .
@@ -14,6 +15,7 @@ services:
    working_dir: /e2e-firefox
    volumes:
     - ./:/e2e-firefox
+    - ./artifacts/firefox:/e2e-firefox/cypress/videos
 
   e2e-edge:
    build: .
@@ -21,3 +23,4 @@ services:
    working_dir: /e2e-edge
    volumes:
     - ./:/e2e-edge
+    - ./artifacts/edge:/e2e-edge/cypress/videos
