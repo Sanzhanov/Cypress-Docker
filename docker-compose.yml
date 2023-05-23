@@ -6,6 +6,7 @@ services:
    command: "-b chrome"
    working_dir: /e2e-chrome
    volumes:
+    - ./:/e2e-chrome
     - ./artifacts/chrome/videos:/e2e-chrome/cypress/videos
     - ./artifacts/chrome/screenshots:/e2e-chrome/cypress/screenshots
     
