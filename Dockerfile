@@ -8,9 +8,7 @@ COPY ./cypress ./cypress
 
 RUN npm i
 
-ENTRYPOINT ["npx", "cypress", "run"]
-
-CMD ["--browser chrome"]
+ENTRYPOINT npx cypress run -b chrome
 
 RUN mkdir artifacts
 
