@@ -5,16 +5,16 @@ services:
    build: .
    command: "-b chrome"
    volumes:
-    - ./:/tests
+    - ./:./
     
   e2e-firefox:
    build: .
    command: "-b firefox -c video=false"
    volumes:
-    - ./:/tests
+    - ./:./
 
   e2e-edge:
    build: .
    command: "-b edge"
    volumes:
-    - ./:/tests
+    - ./:./
