@@ -4,17 +4,20 @@ services:
   e2e-chrome:
    build: .
    command: "-b chrome"
+   working_dir: /e2e-chrome
    volumes:
-    - ./:/
+    - ./:/e2e-chrome
     
   e2e-firefox:
    build: .
    command: "-b firefox -c video=false"
+   working_dir: /e2e-firefox
    volumes:
-    - ./:/
+    - ./:/e2e-firefox
 
   e2e-edge:
    build: .
    command: "-b edge"
+   working_dir: /e2e-edge
    volumes:
-    - ./:/
+    - ./:/e2e-edge
