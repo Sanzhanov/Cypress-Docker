@@ -2,19 +2,19 @@ version: '3.2'
 services: 
 
   e2e-chrome:
-   build: .
+   build: ./
    command: "--browser chrome"
    volumes:
     - ./:/tests
     
   e2e-firefox:
-   build: .
+   build: ./
    command: "--browser firefox --config video=false"
    volumes:
     - ./:/tests
 
   e2e-edge:
-   build: .
+   build: ./
    command: "--browser edge"
    volumes:
     - ./:/tests
