@@ -23,19 +23,25 @@ jobs:
       run: docker-compose up
 
     - name: Archive and upload Chrome artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: chrome-artifacts
-        path: ./artifacts/chrome
+        path: |
+          ./artifacts/chrome/videos
+          ./artifacts/chrome/screenshots
 
     - name: Archive and upload Firefox artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: firefox-artifacts
-        path: ./artifacts/firefox
+        path: |
+          ./artifacts/firefox/videos
+          ./artifacts/firefox/screenshots
 
     - name: Archive and upload Edge artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: edge-artifacts
-        path: ./artifacts/edge
+        path: |
+          ./artifacts/edge/videos
+          ./artifacts/edge/screenshots
