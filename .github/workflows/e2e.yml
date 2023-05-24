@@ -23,7 +23,10 @@ jobs:
         run: docker-compose up -d e2e-chrome e2e-firefox e2e-edge
 
       - name: Wait for services to start
-        run: docker-compose logs -f
+        run: |
+          docker-compose logs -f e2e-chrome > chrome-logs.txt &
+          docker-compose logs -f e2e-firefox > firefox-logs.txt &
+          docker-compose logs -f e2e-edge > edge-logs.txt
 
       - name: Archive and upload Chrome artifacts
         uses: actions/upload-artifact@v3
@@ -32,6 +35,7 @@ jobs:
           path: |
             ./artifacts/chrome/videos
             ./artifacts/chrome/screenshots
+            chrome-logs.txt
 
       - name: Archive and upload Firefox artifacts
         uses: actions/upload-artifact@v3
@@ -39,6 +43,7 @@ jobs:
           name: firefox-artifacts
           path:
             ./artifacts/firefox/screenshots
+            firefox-logs.txt
 
       - name: Archive and upload Edge artifacts
         uses: actions/upload-artifact@v3
@@ -47,3 +52,4 @@ jobs:
           path: |
             ./artifacts/edge/videos
             ./artifacts/edge/screenshots
+            edge-logs.txt
