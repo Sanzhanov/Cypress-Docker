@@ -7,8 +7,8 @@ services:
     working_dir: /e2e-chrome
     volumes:
       - ./:/e2e-chrome
-      - chrome-videos:/e2e-chrome/cypress/videos
-      - chrome-screenshots:/e2e-chrome/cypress/screenshots
+      - ./artifacts/chrome/videos:/e2e-chrome/cypress/videos
+      - ./artifacts/chrome/screenshots:/e2e-chrome/cypress/screenshots
 
   e2e-firefox:
     build: .
@@ -16,7 +16,8 @@ services:
     working_dir: /e2e-firefox
     volumes:
       - ./:/e2e-firefox
-      - firefox-screenshots:/e2e-firefox/cypress/screenshots
+      - ./artifacts/firefox/videos:/e2e-firefox/cypress/videos
+      - ./artifacts/firefox/screenshots:/e2e-firefox/cypress/screenshots
 
   e2e-edge:
     build: .
@@ -24,12 +25,5 @@ services:
     working_dir: /e2e-edge
     volumes:
       - ./:/e2e-edge
-      - edge-videos:/e2e-edge/cypress/videos
-      - edge-screenshots:/e2e-edge/cypress/screenshots
-
-volumes:
-  chrome-videos:
-  chrome-screenshots:
-  firefox-screenshots:
-  edge-videos:
-  edge-screenshots:
+      - ./artifacts/edge/videos:/e2e-edge/cypress/videos
+      - ./artifacts/edge/screenshots:/e2e-edge/cypress/screenshots
