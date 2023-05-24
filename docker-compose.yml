@@ -1,32 +1,31 @@
 version: '3.2'
-services: 
-
+services:
   e2e-chrome:
-   build:
-    context: .
-    dockerfile: Dockerfile
-   command: "-b chrome"
-   volumes:
-    - ./:/e2e-chrome
-    - ./artifacts/chrome/videos:/e2e-chrome/cypress/videos
-    - ./artifacts/chrome/screenshots:/e2e-chrome/cypress/screenshots
-    
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: "-b chrome"
+    volumes:
+      - ./:/e2e-chrome
+      - ./artifacts/chrome/videos:/e2e-chrome/cypress/videos
+      - ./artifacts/chrome/screenshots:/e2e-chrome/cypress/screenshots
+
   e2e-firefox:
-   build:
-    context: .
-    dockerfile: Dockerfile
-   command: "-b firefox -c video=false"
-   volumes:
-   - ./:/e2e-firefox
-    - ./artifacts/firefox/videos:/e2e-firefox/cypress/videos
-    - ./artifacts/firefox/screenshots:/e2e-firefox/cypress/screenshots
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: "-b firefox -c video=false"
+    volumes:
+      - ./:/e2e-firefox
+      - ./artifacts/firefox/videos:/e2e-firefox/cypress/videos
+      - ./artifacts/firefox/screenshots:/e2e-firefox/cypress/screenshots
 
   e2e-edge:
-   build:
-    context: .
-    dockerfile: Dockerfile
-   command: "-b edge"
-   volumes:
-    - ./:/e2e-edge
-    - ./artifacts/edge/videos:/e2e-edge/cypress/videos
-    - ./artifacts/edge/screenshots:/e2e-edge/cypress/screenshots
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: "-b edge"
+    volumes:
+      - ./:/e2e-edge
+      - ./artifacts/edge/videos:/e2e-edge/cypress/videos
+      - ./artifacts/edge/screenshots:/e2e-edge/cypress/screenshots
