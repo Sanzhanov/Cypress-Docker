@@ -6,42 +6,45 @@ on:
     branches:
       - 'main'
   pull_request:
-   types:
+    types:
       - opened
   schedule:
     - cron: '0 2 * * *'
 
 jobs:
- cypress-run:
-   runs-on: ubuntu-latest
+  cypress-run:
+    runs-on: ubuntu-latest
 
-   steps:
-    - name: Checkout code 🛎
-      uses: actions/checkout@v3
+    steps:
+      - name: Checkout code 🛎
+        uses: actions/checkout@v3
 
-    - name: Run docker-compose 🐳
-      run: docker-compose up
+      - name: Run docker-compose 🐳
+        run: docker-compose up -d e2e-chrome e2e-firefox e2e-edge
 
-    - name: Archive and upload Chrome artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: chrome-artifacts
-        path: |
-          ./artifacts/chrome/videos
-          ./artifacts/chrome/screenshots
+      - name: Wait for services to start
+        run: docker-compose logs -f
 
-    - name: Archive and upload Firefox artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: firefox-artifacts
-        path: |
-          ./artifacts/firefox/videos
-          ./artifacts/firefox/screenshots
+      - name: Archive and upload Chrome artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: chrome-artifacts
+          path: |
+            ./artifacts/chrome/videos
+            ./artifacts/chrome/screenshots
 
-    - name: Archive and upload Edge artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: edge-artifacts
-        path: |
-          ./artifacts/edge/videos
-          ./artifacts/edge/screenshots
+      - name: Archive and upload Firefox artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: firefox-artifacts
+          path: |
+            ./artifacts/firefox/videos
+            ./artifacts/firefox/screenshots
+
+      - name: Archive and upload Edge artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: edge-artifacts
+          path: |
+            ./artifacts/edge/videos
+            ./artifacts/edge/screenshots
