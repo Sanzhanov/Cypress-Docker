@@ -2,7 +2,6 @@ version: '3.8'
 
 services:
   e2e-chrome:
-    build: .
     command: "-b chrome"
     working_dir: /e2e-chrome
     volumes:
@@ -11,7 +10,6 @@ services:
       - ./artifacts/chrome/screenshots:/e2e-chrome/cypress/screenshots
 
   e2e-firefox:
-    build: .
     command: "-b firefox -c video=false"
     working_dir: /e2e-firefox
     volumes:
@@ -20,7 +18,6 @@ services:
       - ./artifacts/firefox/screenshots:/e2e-firefox/cypress/screenshots
 
   e2e-edge:
-    build: .
     command: "-b edge"
     working_dir: /e2e-edge
     volumes:
