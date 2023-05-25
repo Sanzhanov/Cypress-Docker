@@ -37,8 +37,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: firefox-artifacts
-          path: |
-            ./artifacts/firefox/videos
+          path:
             ./artifacts/firefox/screenshots
 
       - name: Upload Edge artifacts 📸
@@ -48,3 +47,11 @@ jobs:
           path: |
             ./artifacts/edge/videos
             ./artifacts/edge/screenshots
+
+      - name: Upload Electron artifacts 📸
+        uses: actions/upload-artifact@v3
+        with:
+          name: electron-artifacts
+          path: |
+            ./artifacts/electron/videos
+            ./artifacts/electron/screenshots

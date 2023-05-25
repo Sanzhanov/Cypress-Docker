@@ -10,9 +10,8 @@ services:
 
   e2e-firefox:
     build: .
-    command: "-b firefox"
+    command: "-b firefox -c video=false"
     volumes:
-      - ./artifacts/firefox/videos:/e2e/cypress/videos
       - ./artifacts/firefox/screenshots:/e2e/cypress/screenshots
 
   e2e-edge:
@@ -21,3 +20,9 @@ services:
     volumes:
       - ./artifacts/edge/videos:/e2e/cypress/videos
       - ./artifacts/edge/screenshots:/e2e/cypress/screenshots
+
+  e2e-electron:
+    build: .
+    volumes:
+      - ./artifacts/electron/videos:/e2e/cypress/videos
+      - ./artifacts/electron/screenshots:/e2e/cypress/screenshots
