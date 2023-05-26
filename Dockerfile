@@ -9,4 +9,4 @@ COPY ./cypress ./cypress
 RUN npm i &&\
     npx cypress info
 
-CMD ["npx", "cypress", "run"]
+ENTRYPOINT ["npx", "cypress", "run"]
