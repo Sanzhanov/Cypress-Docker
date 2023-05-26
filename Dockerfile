@@ -6,8 +6,7 @@ COPY ./package.json .
 COPY ./cypress.config.ts .
 COPY ./cypress ./cypress
 
-RUN npm i
-
-RUN cypress info
+RUN npm i &&\
+    npx cypress info
 
 CMD ["npx", "cypress", "run"]
