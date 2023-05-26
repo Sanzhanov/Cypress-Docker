@@ -8,4 +8,6 @@ COPY ./cypress ./cypress
 
 RUN npm i
 
+RUN npx cypress info
+
 ENTRYPOINT ["npx", "cypress", "run"]

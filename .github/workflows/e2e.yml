@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code 🛎
+      - name: Checkout 🛎
         uses: actions/checkout@v3
 
       - name: Run docker-compose 🐳
