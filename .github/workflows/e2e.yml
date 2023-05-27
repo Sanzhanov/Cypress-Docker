@@ -36,6 +36,7 @@ jobs:
 
       - name: Upload Firefox artifacts 📸
         uses: actions/upload-artifact@v3
+        if: failure()
         with:
           name: firefox-artifacts
           path:
@@ -43,6 +44,7 @@ jobs:
 
       - name: Upload Edge artifacts 📸
         uses: actions/upload-artifact@v3
+        if: failure()
         with:
           name: edge-artifacts
           path: |
@@ -51,6 +53,7 @@ jobs:
 
       - name: Upload Electron artifacts 📸
         uses: actions/upload-artifact@v3
+        if: failure()
         with:
           name: electron-artifacts
           path: |
