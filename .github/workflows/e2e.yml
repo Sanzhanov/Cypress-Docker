@@ -27,6 +27,7 @@ jobs:
 
       - name: Upload Chrome artifacts 📸
         uses: actions/upload-artifact@v3
+        if: failure()
         with:
           name: chrome-artifacts
           path: |
