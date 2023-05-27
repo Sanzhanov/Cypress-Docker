@@ -1,7 +1,6 @@
 name: cross browser end-to-end testing 🚀
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - 'main'
