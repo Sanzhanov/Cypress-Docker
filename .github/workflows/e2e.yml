@@ -1,7 +1,6 @@
 name: cross browser end-to-end testing 🚀
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - 'main'
@@ -32,6 +31,8 @@ jobs:
           path: |
             ./artifacts/chrome/videos
             ./artifacts/chrome/screenshots
+          if-no-files-found: ignore
+          retention-days: 5
 
       - name: Upload Firefox artifacts 📸
         uses: actions/upload-artifact@v3
@@ -39,6 +40,8 @@ jobs:
           name: firefox-artifacts
           path:
             ./artifacts/firefox/screenshots
+          if-no-files-found: ignore
+          retention-days: 5
 
       - name: Upload Edge artifacts 📸
         uses: actions/upload-artifact@v3
@@ -47,6 +50,8 @@ jobs:
           path: |
             ./artifacts/edge/videos
             ./artifacts/edge/screenshots
+          if-no-files-found: ignore
+          retention-days: 5
 
       - name: Upload Electron artifacts 📸
         uses: actions/upload-artifact@v3
@@ -55,3 +60,5 @@ jobs:
           path: |
             ./artifacts/electron/videos
             ./artifacts/electron/screenshots
+          if-no-files-found: ignore
+          retention-days: 5
