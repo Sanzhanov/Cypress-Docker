@@ -41,6 +41,7 @@ jobs:
             ./artifacts/firefox/screenshots
 
       - name: Upload Edge artifacts 📸
+        uses: actions/upload-artifact@v3
         with:
           name: edge-artifacts
           path: |
