@@ -1,6 +1,7 @@
 name: cross browser end-to-end testing 🚀
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - 'main'
@@ -26,7 +27,6 @@ jobs:
 
       - name: Upload Chrome artifacts 📸
         uses: actions/upload-artifact@v3
-        if: failure()
         with:
           name: chrome-artifacts
           path: |
@@ -35,15 +35,12 @@ jobs:
 
       - name: Upload Firefox artifacts 📸
         uses: actions/upload-artifact@v3
-        if: failure()
         with:
           name: firefox-artifacts
           path:
             ./artifacts/firefox/screenshots
 
       - name: Upload Edge artifacts 📸
-        uses: actions/upload-artifact@v3
-        if: failure()
         with:
           name: edge-artifacts
           path: |
@@ -52,7 +49,6 @@ jobs:
 
       - name: Upload Electron artifacts 📸
         uses: actions/upload-artifact@v3
-        if: failure()
         with:
           name: electron-artifacts
           path: |
